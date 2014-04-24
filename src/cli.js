@@ -22,6 +22,10 @@ commands.help = function(opts) {
 	console.log([
 		'USAGE: '+comname+' [OPTION(S)] deploy|help',
 		'',
+		'..where options are:',
+		'',
+		'   -v                         Verbose output of what is happening',
+		'',
 		'..where options for deploy are:',
 		'',
 		'   --api-key={string}         The API key',

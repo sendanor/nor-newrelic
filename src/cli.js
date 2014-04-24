@@ -163,6 +163,7 @@ return Q.fcall(function get_config() {
 
 }).fail(function(err) {
 	util.error(comname + ': '+err);
+	process.exit(1);
 }).done();
 
 /* EOF */

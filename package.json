@@ -1,0 +1,33 @@
+{
+  "name": "nor-newrelic",
+  "version": "0.1.0",
+  "description": "Our newrelic CLI utility",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sendanor/nor-newrelic.git"
+  },
+  "keywords": [
+    "newrelic",
+    "cli",
+    "deploy"
+  ],
+  "author": "Jaakko-Heikki Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sendanor/nor-newrelic/issues"
+  },
+  "homepage": "https://github.com/sendanor/nor-newrelic",
+  "bin": {
+    "nor-newrelic": "./src/cli.js"
+  },
+  "dependencies": {
+    "optimist"  : ">= 0.6.1  < 0.7.0",
+    "nor-debug" : ">= 0.1.32 < 0.2.0",
+    "nor-rest"  : ">= 0.1.10 < 0.2.0",
+    "q"         : ">= 1.0.1  < 1.1.0"
+  }
+}

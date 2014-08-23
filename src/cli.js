@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-var Q = require('q');
+
+"use strict";
+
+var $Q = require('q');
 var debug = require('nor-debug');
 var is = require('nor-is');
 var argv = require('optimist').boolean('v').argv;
@@ -47,7 +50,7 @@ function read_config(path) {
 function save_config(path, config) {
 	debug.assert(path).is('string');
 	debug.assert(config).is('object');
-	return Q.fcall(function stringify_json() {
+	return $Q.fcall(function stringify_json() {
 		return JSON.stringify(config, null, 2);
 	}).then(function write_to_file(data) {
 		return FS.writeFile(path, data, {'encoding':'utf8'});
@@ -58,7 +61,7 @@ function save_config(path, config) {
 var commands = {};
 
 /** Deploy command */
-commands.help = function(opts) {
+commands.help = function(/* opts */) {
 	console.log([
 		'USAGE: '+comname+' [OPTION(S)] deploy|help|save',
 		'',
@@ -85,7 +88,7 @@ commands.deploy = function(opts) {
 
 /** Save config */
 commands.save = function(opts, args) {
-	
+
 	// Parse config_key
 	var config_key;
 	if(args.application_id) {
@@ -94,7 +97,7 @@ commands.save = function(opts, args) {
 		config_key = args.app_name;
 	}
 
-	return Q.fcall(function read_file() {
+	return $Q.fcall(function read_file() {
 		return read_config(CONFIG_FILE);
 	}).then(function save_file(config) {
 		config.applications[config_key] = args;
@@ -120,7 +123,7 @@ if(actions.length === 0) {
 	actions.push('help');
 }
 
-return Q.fcall(function get_config() {
+return $Q.fcall(function get_config() {
 	return read_config(CONFIG_FILE);
 }).then(function do_actions(config) {
 
@@ -152,14 +155,14 @@ return Q.fcall(function get_config() {
 	return actions.map(function action_pre(command) {
 		debug.log('command = ', command);
 		return function action() {
-			return Q.when(commands[command](args, cli_args)).then(function action_post() {
+			return $Q.when(commands[command](args, cli_args)).then(function action_post() {
 				console.log(comname + ': ' + command + ': successful');
 			}).fail(function(err) {
 				debug.log(err);
 				throw new TypeError(command + ': ' + err);
 			});
 		};
-	}).reduce(Q.when, Q());
+	}).reduce($Q.when, $Q());
 
 }).fail(function(err) {
 	util.error(comname + ': '+err);

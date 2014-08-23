@@ -1,10 +1,11 @@
 {
   "name": "nor-newrelic",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Our newrelic CLI utility",
-  "main": "src/index.js",
+  "main": "src/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"jshint": "jshint src/"
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,17 @@
   },
   "dependencies": {
     "nor-debug" : ">= 0.1.38 < 0.2.0",
+    "nor-array" : ">= 0.1.2  < 0.2.0",
     "nor-is"    : ">= 0.1.13 < 0.2.0",
     "nor-rest"  : ">= 0.1.13 < 0.2.0",
     "nor-fs"    : ">= 0.1.7  < 0.2.0",
     "optimist"  : ">= 0.6.1  < 0.7.0",
     "q"         : ">= 1.0.1  < 1.1.0"
+  },
+  "optionalDependencies": {
+    "newrelic"   : ">= 1.10.0 < 1.11.0"
+  },
+  "devDependencies": {
+    "jshint"       : "*"
   }
 }

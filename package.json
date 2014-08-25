@@ -1,11 +1,11 @@
 {
   "name": "nor-newrelic",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Our newrelic CLI utility",
   "main": "src/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"jshint": "jshint src/"
+    "jshint": "jshint src/"
   },
   "repository": {
     "type": "git",

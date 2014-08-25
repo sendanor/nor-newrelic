@@ -5,6 +5,8 @@
 
 "use strict";
 
+var debug = require('nor-debug');
+
 /** Returns true if module exists */
 function module_exists(name) {
 	try {

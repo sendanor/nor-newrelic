@@ -17,6 +17,7 @@ function module_exists(name) {
 
 var mod = module.exports = {};
 
+/** */
 mod.enable = function() {
 
 	if(mod.nr) {
@@ -26,10 +27,17 @@ mod.enable = function() {
 	if(module_exists("newrelic")) {
 		try {
 			mod.nr = require("newrelic");
+			return mod.nr;
 		} catch(e) {
 			debug.warn('Failed to enable support for NewRelic.');
 		}
 	}
 };
+
+// Enable if NEW_RELIC_ENABLED exists already
+var NEW_RELIC_ENABLED = ((''+process.env.NEW_RELIC_ENABLED).toUpperCase() === 'TRUE') ? true : false;
+if(NEW_RELIC_ENABLED) {
+	mod.enable();
+}
 
 /* EOF */

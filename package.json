@@ -1,10 +1,11 @@
 {
   "name": "nor-newrelic",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Our newrelic CLI utility",
   "main": "src/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node-lint src/ --config=lint.json",
     "jshint": "jshint src/"
   },
   "repository": {
@@ -38,6 +39,7 @@
     "newrelic"   : ">= 1.10.1 < 1.11.0"
   },
   "devDependencies": {
+    "lint"         : "*",
     "jshint"       : "*"
   }
 }

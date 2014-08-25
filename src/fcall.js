@@ -12,6 +12,7 @@ var nr = require('./nr.js');
 
 /** NewRelic `createTracer()` as `$Q.fcall({function})` style implementation */
 module.exports = function nr_fcall(name, fun) {
+	//debug.log('name=', name, ' and fun=', (typeof fun), ' and nr.nr=', (typeof nr.nr));
 	if(!nr.nr) {
 		return $Q.fcall(fun);
 	}

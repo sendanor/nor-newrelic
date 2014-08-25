@@ -31,7 +31,7 @@ mod.enable = function() {
 			mod.nr = require("newrelic");
 			return mod.nr;
 		} catch(e) {
-			debug.warn('Failed to enable support for NewRelic.');
+			debug.error('Failed to enable support for NewRelic: ', e);
 		}
 	}
 };

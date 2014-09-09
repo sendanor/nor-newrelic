@@ -25,7 +25,7 @@ module.exports = function nr_create_background_transaction(url, fun) {
 		return;
 	}
 
-	nr.nr.createBackgroundTransaction(url, function custom_background_transaction() {
+	var call = nr.nr.createBackgroundTransaction(url, function custom_background_transaction() {
 		$Q.fcall(fun).fail(function(err) {
 			debug.error(err);
 			nr.nr.noticeError(err);
@@ -33,6 +33,8 @@ module.exports = function nr_create_background_transaction(url, fun) {
 			nr.nr.endTransaction();
 		}).done();
 	});
+
+	call();
 };
 
 /* EOF */

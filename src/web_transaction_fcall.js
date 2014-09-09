@@ -26,7 +26,7 @@ module.exports = function nr_create_web_transaction(url, fun) {
 	}
 
 	nr.nr.createWebTransaction(url, function custom_web_transaction() {
-		return $Q.fcall(fun).fail(function(err) {
+		$Q.fcall(fun).fail(function(err) {
 			debug.error(err);
 			nr.nr.noticeError(err);
 		}).fin(function() {

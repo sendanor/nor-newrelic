@@ -26,7 +26,7 @@ module.exports = function nr_create_background_transaction(url, fun) {
 	}
 
 	nr.nr.createBackgroundTransaction(url, function custom_background_transaction() {
-		return $Q.fcall(fun).fail(function(err) {
+		$Q.fcall(fun).fail(function(err) {
 			debug.error(err);
 			nr.nr.noticeError(err);
 		}).fin(function() {

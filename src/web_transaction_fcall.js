@@ -23,7 +23,7 @@ module.exports = function nr_wtfcall(url, fun) {
 	}
 
 	var defer = $Q.defer();
-	var call = nr.nr.createWebTransaction(url, tr_fcall.bind(undefined, nr, defer) );
+	var call = nr.nr.createWebTransaction(url, tr_fcall.bind(undefined, nr, defer, fun) );
 	call();
 	return defer.promise;
 };

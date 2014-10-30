@@ -8,7 +8,7 @@
 var $Q = require('q');
 
 /** */
-module.exports = function nr_tr_fcall(nr, defer) {
+module.exports = function nr_tr_fcall(nr, defer, fun) {
 	$Q.fcall(fun).then(function(res) {
 		defer.resolve(res);
 	}).fail(function(err) {

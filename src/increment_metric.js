@@ -13,7 +13,11 @@ module.exports = function nr_increment_metric(name, amount) {
 	debug.assert(name).is('string');
 	//debug.assert(amount).is('defined');
 	if(!nr.nr) { return; }
-	nr.nr.incrementMetric(name, amount);
+	if(arguments.length === 1) {
+		nr.nr.incrementMetric(name);
+	} else {
+		nr.nr.incrementMetric(name, amount);
+	}
 };
 
 /* EOF */

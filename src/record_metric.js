@@ -13,7 +13,11 @@ module.exports = function nr_record_metric(name, value) {
 	debug.assert(name).is('string');
 	//debug.assert(value).is('defined');
 	if(!nr.nr) { return; }
-	nr.nr.recordMetric(name, value);
+	if(arguments.length === 1) {
+		nr.nr.recordMetric(name);
+	} else {
+		nr.nr.recordMetric(name, value);
+	}
 };
 
 /* EOF */

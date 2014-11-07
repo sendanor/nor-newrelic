@@ -11,7 +11,7 @@ var nr = require('./nr.js');
 /** Record custom metric */
 module.exports = function nr_record_metric(name, value) {
 	debug.assert(name).is('string');
-	debug.assert(value).is('defined');
+	//debug.assert(value).is('defined');
 	if(!nr.nr) { return; }
 	nr.nr.recordMetric(name, value);
 };

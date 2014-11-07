@@ -9,7 +9,9 @@ module.exports = {
 	"deployment": require('./deployment.js'),
 	"noticeError": require('./notice_error.js'),
 	"wtfcall": require('./web_transaction_fcall.js'),
-	"btfcall": require('./background_transaction_fcall.js')
+	"btfcall": require('./background_transaction_fcall.js'),
+	"recordMetric": require('./record_metric.js'),
+	"incrementMetric": require('./increment_metric.js')
 };
 
 /* EOF */

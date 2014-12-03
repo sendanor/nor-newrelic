@@ -1,6 +1,6 @@
 {
   "name": "nor-newrelic",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Our newrelic CLI utility",
   "main": "src/",
   "scripts": {
@@ -36,10 +36,10 @@
     "q"         : ">= 1.0.1  < 1.1.0"
   },
   "optionalDependencies": {
-    "newrelic"   : ">= 1.13.2 < 1.14.0"
+    "newrelic"   : ">= 1.13.2"
   },
   "peerDependencies": {
-    "newrelic"   : ">= 1.13.2 < 1.14.0"
+    "newrelic"   : ">= 1.13.2"
   },
   "devDependencies": {
     "lint"         : "*",

@@ -22,10 +22,12 @@ module.exports = function nr_wtfcall(url, fun) {
 		return $Q.fcall(fun);
 	}
 
-	var defer = $Q.defer();
-	var call = nr.nr.createWebTransaction(url, tr_fcall.bind(undefined, nr, defer, fun) );
-	call();
-	return defer.promise;
+	return $Q.fcall(function nr_wtfcall_() {
+		var defer = $Q.defer();
+		var call = nr.nr.createWebTransaction(url, tr_fcall.bind(undefined, nr, defer, fun) );
+		call();
+		return defer.promise;
+	});
 };
 
 /* EOF */

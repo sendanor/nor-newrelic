@@ -5,6 +5,7 @@
 
 module.exports = {
 	"nr": require('./nr.js'),
+	"init": require('./init.js'),
 	"fcall": require('./fcall.js'),
 	"deployment": require('./deployment.js'),
 	"noticeError": require('./notice_error.js'),

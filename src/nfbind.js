@@ -46,7 +46,7 @@ module.exports = function nr_nfbind(name, fun) {
 	return function nr_nfbind_wrapper() {
 		var defer = $Q.defer();
 		var args = Array.prototype.slice.call(arguments);
-		args.push( nr.nr.createTracer(name, defer_resolver.bind(undefined, defer)) );
+		args.push( nr.nr.createTracer(name, FUNCTION(defer_resolver).curry(defer)) );
 		//debug.log('args = ', args);
 		fun.apply(undefined, args);
 		return defer.promise;

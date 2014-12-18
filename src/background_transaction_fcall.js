@@ -9,6 +9,7 @@ var $Q = require('q');
 var debug = require('nor-debug');
 var nr = require('./nr.js');
 var tr_fcall = require('./tr_fcall.js');
+var FUNCTION = require('nor-function');
 
 /** The `newrelic.createBackgroundTracer()` and `newrelic.endTransaction()` as `$Q.fcall({function})`
  * style implementation
@@ -23,7 +24,7 @@ module.exports = function nr_btfcall(url, fun) {
 	}
 
 	var defer = $Q.defer();
-	var call = nr.nr.createBackgroundTransaction(url, tr_fcall.bind(undefined, nr, defer, fun) );
+	var call = nr.nr.createBackgroundTransaction(url, FUNCTION(tr_fcall).curry(nr, defer, fun) );
 	call();
 	return defer.promise;
 };

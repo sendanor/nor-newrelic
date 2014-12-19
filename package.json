@@ -1,6 +1,6 @@
 {
   "name": "nor-newrelic",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Our newrelic CLI utility",
   "main": "src/",
   "scripts": {

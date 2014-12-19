@@ -7,6 +7,7 @@
 
 var $Q = require('q');
 var debug = require('nor-debug');
+var FUNCTION = require('nor-function');
 
 var nr = require('./nr.js');
 

@@ -1,6 +1,6 @@
 {
   "name": "nor-newrelic",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Our newrelic CLI utility",
   "main": "src/",
   "scripts": {
@@ -29,10 +29,10 @@
   "dependencies": {
     "nor-debug" : ">= 0.1.47 < 0.2.0",
     "nor-array" : ">= 0.1.5  < 0.2.0",
-    "nor-function" : ">= 0.1.3  < 0.2.0",
+    "nor-function" : ">= 0.1.4  < 0.2.0",
     "nor-is"    : ">= 0.1.16 < 0.2.0",
-    "nor-rest"  : ">= 0.1.21 < 0.2.0",
-    "nor-fs"    : ">= 0.1.13  < 0.2.0",
+    "nor-rest"  : ">= 0.1.22 < 0.2.0",
+    "nor-fs"    : ">= 0.1.14  < 0.2.0",
     "optimist"  : ">= 0.6.1  < 0.7.0",
     "q"         : ">= 1.0.1  < 1.1.0"
   },

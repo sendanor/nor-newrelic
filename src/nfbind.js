@@ -49,7 +49,7 @@ module.exports = function nr_nfbind(name, fun) {
 		var args = Array.prototype.slice.call(arguments);
 		args.push( nr.nr.createTracer(name, FUNCTION(defer_resolver).curry(defer)) );
 		//debug.log('args = ', args);
-		fun.apply(undefined, args);
+		FUNCTION(fun).curryApply(args);
 		return defer.promise;
 	};
 };
